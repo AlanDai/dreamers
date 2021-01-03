@@ -27,25 +27,25 @@ export const clearTag = () => ({
 
 export const fetchTags = () => dispatch => (
     TagApiUtil.fetchTags()
-    .then(tags => dispatch(receiveTags(tags)))
+    .then(tags => dispatch(receiveTags(tags.data)))
     .catch(err => console.log(err))
 )
 
 export const fetchMatchingTag = (tag) => dispatch => (
     TagApiUtil.fetchMatchingTag(tag)
-    .then(tag => dispatch(receiveTag(tag)))
+    .then(tag => dispatch(receiveTag(tag.data)))
     .catch(err => console.log(err))
 )
 
 export const fetchExactTag = (tag) => dispatch => (
     TagApiUtil.fetchExactTag(tag)
-    .then(tag => dispatch(receiveTag(tag)))
+    .then(tag => dispatch(receiveTag(tag.data)))
     .catch(err => console.log(err))
 )
 
 export const deleteTag = (tag) => dispatch => (
     TagApiUtil.deleteTag(tag)
-    .then(()=> dispatch(removeTag(tag)))
+    .then((tag)=> dispatch(removeTag(tag.data)))
 )
 
 
