@@ -32,11 +32,19 @@ export const clearLike = () => ({
 //     .catch(err => console.log(err))
 // )
 
+<<<<<<< HEAD
 // export const fetchLike = (likeId) => dispatch => (
 //     LikeApiUtil.fetchLike(likeId)
 //     .then(payload => dispatch(receiveLike(payload.data)))
 //     .catch(err => console.error(err))
 // )
+=======
+export const fetchLike = (likeId) => dispatch => (
+    LikeApiUtil.fetchLike(likeId)
+    .then(payload => dispatch(receiveLike(payload.data)))
+    .catch(err => console.error(err))
+)
+>>>>>>> ccfd5278fa2db48c18619a23a4da2a9b02ebed56
 
 export const fetchLikesByDream = (dreamId) => dispatch => (
     LikeApiUtil.fetchLikesByDream(dreamId)
@@ -50,13 +58,13 @@ export const fetchLikesByUser = (userId) => dispatch => (
     .catch(err => console.error(err))
 )
 
-export const createLike = (dreamId, like) => dispatch => (
-    LikeApiUtil.createLike(dreamId, like)
+export const createLike = (dreamId) => dispatch => (
+    LikeApiUtil.createLike(dreamId)
     .then(payload => dispatch(receiveLike(payload.data)))
     .catch(err => console.error(err))
 )
 
-export const deleteLike = (likeId, dream) => dispatch => (
-    LikeApiUtil.deleteLike(likeId, dream)
+export const deleteLike = (likeId) => dispatch => (
+    LikeApiUtil.deleteLike(likeId)
     .then((payload) => dispatch(removeLike(payload.data)))
 )
