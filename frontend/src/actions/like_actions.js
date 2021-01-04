@@ -32,19 +32,11 @@ export const clearLike = () => ({
 //     .catch(err => console.log(err))
 // )
 
-<<<<<<< HEAD
 // export const fetchLike = (likeId) => dispatch => (
 //     LikeApiUtil.fetchLike(likeId)
 //     .then(payload => dispatch(receiveLike(payload.data)))
 //     .catch(err => console.error(err))
 // )
-=======
-export const fetchLike = (likeId) => dispatch => (
-    LikeApiUtil.fetchLike(likeId)
-    .then(payload => dispatch(receiveLike(payload.data)))
-    .catch(err => console.error(err))
-)
->>>>>>> ccfd5278fa2db48c18619a23a4da2a9b02ebed56
 
 export const fetchLikesByDream = (dreamId) => dispatch => (
     LikeApiUtil.fetchLikesByDream(dreamId)
