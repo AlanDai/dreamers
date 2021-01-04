@@ -21,7 +21,6 @@ const DreamSchema = new Schema({
     type: String,
     required: true
   },
-<<<<<<< HEAD
   likes: [{
     _id: false,
     id: {
@@ -35,12 +34,6 @@ const DreamSchema = new Schema({
     }
   }],
 
-=======
-  comments: {
-    type: Array,
-    default: []
-  },
->>>>>>> 3df26c33f5a7457a79d9b32c9551e5fd43a3379a
   date: {
     type: Date,
     default: Date.now

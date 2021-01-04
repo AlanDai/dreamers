@@ -4,6 +4,7 @@ export const RECEIVE_LIKES = 'RECEIVE_LIKES';
 export const RECEIVE_LIKE = "RECEIVE_LIKE";
 export const REMOVE_LIKE = "REMOVE_LIKE";
 export const CLEAR_LIKE = 'CLEAR_LIKE';
+export const RECEIVE_LIKE_ERRORS = "RECEIVE_LIKE_ERRORS";
 
 export const receiveLikes = (likes) => ({
     type: RECEIVE_LIKES,
@@ -26,42 +27,38 @@ export const clearLike = () => ({
     type: CLEAR_LIKE
 })
 
+export const receiveErrors = errors => ({
+    type: RECEIVE_LIKE_ERRORS, 
+    errors
+})
+
 // export const fetchLikes = () => dispatch => (
 //     LikeApiUtil.fetchLikes()
 //     .then(likes => dispatch(receiveLikes(likes)))
 //     .catch(err => console.log(err))
 // )
 
-<<<<<<< HEAD
 // export const fetchLike = (likeId) => dispatch => (
 //     LikeApiUtil.fetchLike(likeId)
 //     .then(payload => dispatch(receiveLike(payload.data)))
 //     .catch(err => console.error(err))
-// )
-=======
-export const fetchLike = (likeId) => dispatch => (
-    LikeApiUtil.fetchLike(likeId)
-    .then(payload => dispatch(receiveLike(payload.data)))
-    .catch(err => console.error(err))
-)
->>>>>>> ccfd5278fa2db48c18619a23a4da2a9b02ebed56
 
 export const fetchLikesByDream = (dreamId) => dispatch => (
     LikeApiUtil.fetchLikesByDream(dreamId)
     .then(likes => dispatch(receiveLikes(likes.data)))
-    .catch(err => console.error(err))
+    .catch(err => receiveErrors(err))
 )
 
 export const fetchLikesByUser = (userId) => dispatch => (
     LikeApiUtil.fetchLikesByUser(userId)
     .then(likes => dispatch(receiveLikes(likes.data)))
-    .catch(err => console.error(err))
+    .catch(err => receiveErrors(err))
 )
 
 export const createLike = (dreamId) => dispatch => (
     LikeApiUtil.createLike(dreamId)
     .then(payload => dispatch(receiveLike(payload.data)))
-    .catch(err => console.error(err))
+    .catch(err => receiveErrors(err))
 )
 
 export const deleteLike = (likeId) => dispatch => (
