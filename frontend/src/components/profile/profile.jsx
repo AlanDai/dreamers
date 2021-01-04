@@ -1,6 +1,9 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 import Feed from '../feed/feed';
+// import { fetchFollowed, fetchFollowers, followUser, unfollowUser } from '../../util/follow_api_util';
+// import * as followUtils from '../../util/follow_api_util';
+import axios from 'axios';
 
 class Profile extends React.Component {
     constructor(props) {
@@ -37,6 +40,9 @@ class Profile extends React.Component {
                 location: res.user.location,
                 bio: res.user.bio
             }))
+
+        axios.get(`/api/users/followers/${this.props.match.params.userId}`)
+            .then(res => console.log(res))
             // .then(res => this.setState({ }))
             // .then(res => console.log(res))
         // this.props.fetchDreams()
