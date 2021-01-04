@@ -5,6 +5,7 @@ import { fetchDreamsByUser, fetchDreams, createDream, clearDreams, deleteDream }
 import { fetchUserById, updateUser } from '../../actions/user_actions';
 import { fetchCommentsByDream, clearComments } from '../../actions/comment_actions';
 import { fetchSearchResults, clearSearch } from '../../actions/search_actions';
+import { fetchFollowed, fetchFollowers, followUser, unfollowUser }  from '../../util/follow_api_util';
 
 const mapSTP = state => ({
     currentUser: state.session.user,
@@ -30,6 +31,11 @@ const mapDTP = dispatch => ({
     deleteDream: (dreamId) => dispatch(deleteDream(dreamId)),
     fetchSearchResults: (searchParams) => dispatch(fetchSearchResults(searchParams)),
     clearSearch: () => dispatch(clearSearch()),
-})
+    fetchFollowed: (userId) => dispatch(fetchFollowed(userId)), 
+    fetchFollowers: (userId) => dispatch(fetchFollowers(userId)), 
+    followUser: (userId) => dispatch(followUser(userId)), 
+    unfollowUser: (userId) => dispatch(unfollowUser(userId))
+}
+)
 
 export default connect(mapSTP, mapDTP)(Profile);
