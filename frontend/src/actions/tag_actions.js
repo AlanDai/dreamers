@@ -42,14 +42,20 @@ export const fetchMatchingTag = (tag) => dispatch => (
     TagApiUtil.fetchMatchingTag(tag)
     .then(tag => dispatch(receiveTag(tag)))
     .catch(err => receiveErrors(err))
+<<<<<<< HEAD
 
+=======
+>>>>>>> f0a4c3602c3051bfad6f68bacb23796b14cb7ad7
 )
 
 export const fetchExactTag = (tag) => dispatch => (
     TagApiUtil.fetchExactTag(tag)
     .then(tag => dispatch(receiveTag(tag)))
     .catch(err => receiveErrors(err))
+<<<<<<< HEAD
 
+=======
+>>>>>>> f0a4c3602c3051bfad6f68bacb23796b14cb7ad7
 )
 
 export const createTag = (tag) => dispatch => (

@@ -6,6 +6,25 @@ import jwt_decode from 'jwt-decode';
 import { setAuthToken } from './util/session_api_util';
 import { logout } from './actions/session_actions';
 
+<<<<<<< HEAD
+=======
+import {
+  createDream,
+} from './actions/dream_actions'
+
+import { 
+  createLike, 
+  fetchLike, 
+  fetchLikesByDream, 
+  fetchLikesByUser, 
+  deleteLike
+} from './actions/like_actions'
+>>>>>>> f0a4c3602c3051bfad6f68bacb23796b14cb7ad7
+
+import {
+  createTag,
+  deleteTag,
+} from './actions/tag_actions'
 
 document.addEventListener('DOMContentLoaded', () => {
   let store;
@@ -30,6 +49,18 @@ document.addEventListener('DOMContentLoaded', () => {
     store = configureStore({});
   }
 
+<<<<<<< HEAD
+=======
+  window.store = store
+  window.createLike = createLike
+  window.fetchLike = fetchLike
+  window.fetchLikesByDream = fetchLikesByDream
+  window.fetchLikesByUser = fetchLikesByUser
+  window.deleteLike = deleteLike
+  window.createTag = createTag
+  window.deleteTag = deleteTag
+  window.createDream = createDream
+>>>>>>> f0a4c3602c3051bfad6f68bacb23796b14cb7ad7
 
   const root = document.getElementById('root');
   ReactDOM.render(<Root store={store} />, root);
